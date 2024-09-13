@@ -6,115 +6,332 @@
     <title>Document</title>
     <link rel="icon" href="/image/images-removebg-preview.png">
     <style>
-        .banner{
-           background-color: black;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:400,500,600,700&display=swap');
 
-        }
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(26, 25, 25);
 
-        .banner{
-            color: azure;
-        }
-        .heading{
-            text-align: center;
-            color: aliceblue;
-            font-size: 4.5rem;
-        }
-        .footer{
-            background-color: rgb(199, 186, 186);
-        }
+}
+
+:root{
+    --bg-color: #000000;
+    --second-bg-color: #000000;
+    --text-color: #fff;
+    --main-color: rgb(7, 235, 129);
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
 .header{
-    background-image: url(/image/IMG-20240109-WA0095.jpg);
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+}
+.html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-left: 27%;
+    padding-right: 10%;
+    transition: .3s;
+}
+
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+nav ul li a{
+    color:var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    color: var(--main-color);
+    transition: .3s;
+}
+
+.heading{
+    text-align: center;
+   margin-top: 30px;
+    padding:2rem 0;
+    padding-bottom: 3rem;
+    font-size: 2.5rem;
+    color:white
+}
+
+.heading span{
+    background: var(--main-color);
+    color:#000000;
+    display: inline-block;
+    padding:.5rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(/image/image\ copy\ 2.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 17rem;
+    padding-bottom: 10rem;
+}
+.home .home-content{
+    text-align: center;
+    width: 60rem;
+}
+
+.home .home-content h1{
+    color:var(--text-color);
+    font-size: 3rem;
+
+}
+
+.recipies{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.recipies h4{
+    color: var(--bg-color);
+    background: fixed;
+}
+.recipies p{
+    color: var(--bg-color);
+    background: fixed;
+}
+
+.recipies-container{
+    padding-left: 140px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.recipies-container .recipie-box{
+    height: 400px;
+    width: 350px;
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+.recipie-box img{
+    
+    height: 400px;
+    width: 350px;
+}
+.recipie-box:hover img{
+    transform: scale(1.1);
+}
+
+.recipie-box .recipie-layer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+
+.recipie-box:hover .recipie-layer{
+    transform: translateY(0);
+}
+
+.recipie-layer h4{
+    font-size: 3rem;
+    color: var(--bg-color);
+}
+
+.recipie-layer p{
+    font-size: 1.6rem;
+    max-width: .3rem 0 1rem; 
+}
+
+.recipie-layer a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+.recipie-layer a i{
+    font-size: 2rem;
+    color: var(--second-bg-color);
+}
+.About{
+display: flex;
+height: 100vh;
+border: 4px solid black;
+float: right;
+}
+.about-box{
+    background-color: #000000;
+    color: #f5eded;
+}
+
+.footer{
+   
+    background: url(/image/IMG-20240109-WA0095.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    
+}
+.footer.footer-contener{
+    
+    width: 100rem;
 }
     </style>
 
 </head>
-
-
 <body>
+    
+
+
 <header class="header">
-<h2 class="heading">Dinu's <i>vegan </i>Recipes</h2>
-                   <a href="/index.html"> Home</a>
-                   
-                   
+    <nav>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#recipies">Recipies</a></li>
+            <li><a href="#lunch&dinner">Lunch & Dinner</a></li>
+            <li><a href="#sides&snacks">Sides & Snacks</a></li>
+            <li><a href="#drinks">Drinks</a></li>
+            <li><a href="#seasonal">Seasonal</a></li>
+            <li><a href="#specialDiates">Special Diates</a></li>
+        </ul>
+    </nav>
 </header>
 
-<section class="banner"> 
-<div class="banner-set1">
-
-<a href="/Pages/pizza.html" target="_blank"><img 
-src="/image/pizza new 1.jpg"  
-style="width: 400px; 
-height: 300px;" 
-alt=" "> 
-</a>     
-
- <a href="/Pages/nuddels.html" target="_blank"><img 
-  src="/image/nuddels new 6.jpg" 
- style="width: 400px;
-  height: 300px;"
-   alt="">
-   </a>
-
-    <a href="/Pages/rice.html" target="_blank"> <img 
-     
-     src="/image/WhatsApp Image 2024-08-16 at 15.39.53.jpeg" 
-     style="width: 400px; 
-     height: 300px;" alt=""> 
-     </a>
-<div>
-    <div class =banner-set2>
-        <a href="/Pages/pesta.html" target="_blank">
-     <img src="/image/pesta new 2.jpg"
-     style="width: 400px;
-      height: 300px;"
-      alt="">
-    </a>
-
-
-     <a href="/Pages/koththu.html" target="_blank"><img 
-     src="/image/koththu new 7.jpg" 
-     style="width: 400px; 
-height: 300px;"
-     alt="">
-    </a>
-
-     <a href="/Pages/Cupcake.html" target="_blank">
-        <img src="/image/cup cake new 1.jpg"
-        style="width: 400px;"
-        height="300px"
-         alt="">
-     </a>
+<section class="home" id="home">
+    <div class="home-content">
+        <h1>Dinu Vegan Recipies</h1>
     </div>
-    <section>
+</section>
 
-<br>
-<br><br>
-<section class="manu">
-    <div class="manu page">
+<section class="recipies" id="recipies">
+    <h1 class="heading">Our <span>Recipies</span></h1>
+    <div class="recipies-container">
 
-       
+  <div class="recipie-box">
+    <img src="/image/koththu new 7.jpg" alt="" />
+    <div class="recipie-layer">
+      <h4>Cheese Koththu</h4>
+      <p>
+        Let the whole world know about your brand with unique and
+        performance driven website
+      </p>
+      <a href="/Pages/koththu.html"> Cheese Koththu Recipie</a>
+    </div>
+  </div>
 
-         
-<div class="footer">
-          <footer>
-            
-            
-          </footer>
+  <div class="recipie-box">
+    <img src="/image/WhatsApp Image 2024-08-16 at 15.39.53.jpeg" alt="" />
+    <div class="recipie-layer">
+      <h4>Chicken Rice </h4>
+      <p>
+        Let the whole world know about your brand with unique and
+        performance driven website
+      </p>
+      <a href="/Pages/rice.html"> Chicken Rice Recipie</a>
+    </div>
+  </div>
 
-            <div>
-            </div>
-            </div> 
-        </div>
-            <section>
+  <div class="recipie-box">
+    <img src="/image/cup cake new 1.jpg" alt="" />
+    <div class="recipie-layer">
+      <h4>Cup Cake</h4>
+      <p>
+        Let the whole world know about your brand with unique and
+        performance driven website
+      </p>
+      <a href="/Pages/Cupcake.html">CUP CAKE Recipie</a>
+    </div>
+  </div>
+
+  <div class="recipie-box">
+    <img src="/image/pesta new 2.jpg" alt="" />
+    <div class="recipie-layer">
+      <h4>Cheese pesta</h4>
+      <p>
+        Let the whole world know about your brand with unique and
+        performance driven website
+      </p>
+      <a href="/Pages/pesta.html"> Chesse pesta Recipie</a>
+    </div>
+  </div>
+
+  
+  <div class="recipie-box">
+    <img src="/image/pizza new 1.jpg" alt="" />
+    <div class="recipie-layer">
+      <h4>Double Chicken Pizza</h4>
+      <p>
+        Let the whole world know about your brand with unique and
+        performance driven website
+      </p>
+      <a href="/Pages/pizza.html">  Double Chicken Pizza Recipie</a>
+    </div>
+  </div>
+
+  <div class="recipie-box">
+    <img src="/image/nuddels new 6.jpg" alt="" />
+    <div class="recipie-layer">
+      <h4>Nuddels</h4>
+      <p>
+        Let the whole world know about your brand with unique and
+        performance driven website
+      </p>
+      <a href="/Pages/nuddels.html"> Nuddels Recipie</a>
+    </div>
+  </div>
+
+
+  <section class="footer" id ="footer">
+    <div class="footer-container">
+        <h2>Dinu Vegan Recipies</h2>
+        
+    </div>
+
+  </section>
+
+<section>
+
 </body>
 </html>
-
-
-
-
-
-
-
-    
-
-    

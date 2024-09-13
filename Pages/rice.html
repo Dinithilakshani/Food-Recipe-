@@ -5,6 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rice</title>
     <style>
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(26, 25, 25);
+
+}
+
+
+
+.header{
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+}
+.html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+
+.heading{
+    text-align: center;
+   margin-top: 30px;
+    padding:2rem 0;
+    padding-bottom: 3rem;
+    font-size: 2.5rem;
+    color:white
+}
+
+.heading span{
+    background: var(--main-color);
+    color:#000000;
+    display: inline-block;
+    padding:.5rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(/image/image\ copy\ 2.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 17rem;
+    padding-bottom: 10rem;
+}
+.home .home-content{
+    text-align: center;
+    width: 60rem;
+}
+
+.home .home-content h1{
+    color:var(--text-color);
+    font-size: 3rem;
+
+}
+
+
         body{
             background-color: black;
 
@@ -16,12 +85,25 @@
 </head>
 
 <body>
+    <header class="header">
+        <nav>
+            <ul>
+                <a href="/index.html">Home</a>
+            </ul>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1 style="color: #e7dede;">Dinu Vegan Recipies</h1>
+            <h2></h2>
+        </div>
+    </section>
     
         <section class="Rice">
             <img src="/image/images-removebg-preview.png" alt="">
 
-<h2>Sea Food Rice</h2>
-<h3><a href="/index.html"> Home</a></h3>
+<h2>Chicken Rice</h2>
+
 <div>
 
 
