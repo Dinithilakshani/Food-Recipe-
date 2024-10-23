@@ -8,15 +8,16 @@
     <style>
 
 *{
-    padding: 0;
+    padding: 10px;
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
     background-color: rgb(26, 25, 25);
+    font-family: 'Playfair Display', serif;
+
 
 }
 
@@ -56,7 +57,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(/image/image\ copy\ 2.png) no-repeat;
+    height: 1100px;
+    background: url(/image/istockphoto-1777754805-1024x1024.jpg) no-repeat;
     background-position: center;
     background-size: cover;
     padding-top: 17rem;
@@ -95,6 +97,112 @@
             color: aliceblue;
             font-size: 2rem;
         }
+
+        .f-imge {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .f-imge a img {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+
+        .f-imge a img:hover {
+            transform: scale(1.2) rotate(10deg);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        hr{
+            color: white;
+        }
+    
+        footer{
+        width: 100%;
+        height: auto;
+  
+        color: white;
+        
+        justify-content: space-between;
+        padding: 12px;
+        font-size: 1.2rem;
+        top: 0;
+        left: 0;
+      }
+
+      nav > ul {
+        list-style: none;
+        display: flex;
+        text-align: center;
+        margin-left: 550px;
+      }
+
+      nav > ul > li {
+        margin: 0 40px;
+      }
+
+      nav > ul > li > a {
+        color: white;
+        text-decoration: none;
+      }
+      
+
+      .detaile{
+        margin-left: 600px;
+        margin-top: -10px;
+      }
+      #copywrite{
+        text-align: center;
+        margin-top: 100px;
+
+      }
+      /* #imge{
+        margin-left: 1100px;
+       margin: -100px;
+        width: 300px;
+        height: 700px;
+        border-radius: 20px;
+      } */
+      .linked {
+            display: flex;
+            
+            margin-top: -300px;
+        }
+
+        .linked ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .linked li {
+            margin-bottom: 15px;
+        }
+
+        .linked a {
+            text-decoration: none;
+            font-size: 20px;
+            color: #333;
+            transition: color 0.3s, transform 0.4s;
+        }
+
+        .linked a:hover {
+            color: #ff6347;
+            transform: scale(1.1) translateX(10px);
+        }
+
+        /* Optional: Add a fade-in animation when the page loads */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .linked {
+            animation: fadeIn 1s ease-in-out;
+        }
+      
     </style>
 </head>
 <body>
@@ -213,28 +321,59 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MDX8fylSisU?si=d_PBvUt09RLH1KPx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br>
 </div>
-<div class="footer">
-    <footer>
-      <hr><hr>
-      <h3>Resipes</h3>                                                                       
-      
-      <ul>
-          <li><a href="/Pages/pizza.html"><h3>Pizza</h3></a></li>                                
-          <li><a href="/Pages/nuddels.html"><h3>  Nuddels</h3></a></li>
-          <li><a href="/Pages/rice.html"><h3>Rice</h3></a></li>
-          <li><a href="/Pages/pesta.html"><h3>Pesta</h3></a></li>
-          <li><a href="/Pages/koththu.html"><h3>Koththu</h3></a></li>
-          <li><a href="/Pages/Cupcake.html"><h3>Cupcake</h3></a></li>
 
-      </ul>
-      <br>
-
-      <p>copywrite &copy;2020</p>
+<footer>
+    <div class="f-imge"> 
+            <a href="https://web.whatsapp.com/"><img src="/image/wt.jpg" width="50px" height="50px">
+            </a>
+            <a href="https://web.facebook.com/home.php"><img src="/image/fd.jpg"width="50px" height="50px alt=">
+            </a>
+            <a href="https://www.instagram.com/"><img src="/image/=.png" width="50px" height="50pxalt="></a>
+            <a href="https://www.linkedin.com/in/dinithi-palliyaguru-8b4505266/ "><img src="/image/inn.png" width="50px" height="50px" alt=""></a>
+    </div><br><br><br>
+    
+        <nav>
+            <ul>
+                <li><a href="/index.html"> Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li><br><br><br>
+    
+            </ul>
+    
+        </nav><br><br>
+       
+        
+       
+    
+        
+    
+    
+        <div class="detaile">
+            <p>Contact Number: 077-6419446</p><br>
+            <p>Email: dinithipalliyaguru@gmail.com</p>
+           
+    
+            
+        </div>
+    
+        <!-- <img id="imge" src="/image/che.jpg" alt=""> -->
+    
+        <div class="linked">
+            <ul>
+                <h1>Menu List</h1><br>
+                <li><a href="/Pages/Cupcake.html">Capcake recipes</a></li><br>
+                <li><a href="/Pages/koththu.html"> Koththu recipes</a></li><br>
+                <li><a href="/Pages/nuddels.html">Nuddels recipes</a></li><br>
+                <li><a href="/Pages/pesta.html">Pesta recipes</a></li><br>
+                <li><a href="/Pages/pizza.html">Double Chicken Pizza recipes</a></li><br>
+                <li><a href="/Pages/rice.html">Sea-Food rice recipes</a></li>
+            </ul>
+    
+        </div>
+    
+        <p id="copywrite">copywrite &copy;2024</p>
+    
     </footer>
-</div>
-      <div>
-</div>
-<div>
     <section>
 </body>
 </html>
