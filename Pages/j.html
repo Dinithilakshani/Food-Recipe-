@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cupcake Recipe - Dinu Vegan Recipes</title>
+    <title>Dinu Vegan Recipes - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/image/images-removebg-preview.png">
     <style>
         * {
             margin: 0;
@@ -23,7 +24,7 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif Netherland vs New Zealand 1st T20I: Fantasy XI, team picks, pitch report and match prediction
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background: linear-gradient(135deg, var(--soft-white) 0%, #fff5f2 100%);
@@ -154,6 +155,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 600px;
         }
 
         .hero::before {
@@ -163,7 +165,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="noodles" patternUnits="userSpaceOnUse" width="50" height="50"><path d="M10 10 Q20 20 30 10 T50 10" stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23noodles)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="food" patternUnits="userSpaceOnUse" width="50" height="50"><circle cx="25" cy="25" r="10" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23food)"/></svg>');
             opacity: 0.3;
         }
 
@@ -189,39 +191,11 @@
             opacity: 0.9;
         }
 
-        /* Main Content */
+        /* Recipes Section */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
-        }
-
-        .recipe-card {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.1);
-            overflow: hidden;
-            margin: 2rem 0;
-        }
-
-        .recipe-image {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(45deg, var(--light-orange), var(--primary-orange));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .recipe-image::after {
-            content: '🧁';
-            font-size: 6rem;
-            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
-        }
-
-        .recipe-content {
-            padding: 3rem;
         }
 
         .section-title {
@@ -231,125 +205,106 @@
             margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 0.5rem;
+            text-align: center;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 50px;
             height: 3px;
             background: linear-gradient(90deg, var(--primary-orange), var(--light-orange));
             border-radius: 2px;
         }
 
-        /* Ingredients Grid */
-        .ingredients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .ingredient-item {
-            background: var(--soft-white);
-            padding: 1rem;
-            border-radius: 15px;
-            border-left: 4px solid var(--primary-orange);
-            transition: transform 0.3s ease;
-        }
-
-        .ingredient-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.1);
-        }
-
-        /* Directions */
-        .directions {
-            margin: 3rem 0;
-        }
-
-        .step {
-            background: white;
-            margin: 1rem 0;
-            padding: 1.5rem;
-            border-radius: 15px;
-            border: 2px solid var(--soft-white);
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .step:hover {
-            border-color: var(--light-orange);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.1);
-        }
-
-        .step-number {
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            background: linear-gradient(135deg, var(--primary-orange), var(--light-orange));
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        /* Media Gallery */
-        .media-gallery {
-            margin: 3rem 0;
-        }
-
-        .images-container {
+        .recipes-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
+            padding: 2rem 0;
         }
 
-        .image-placeholder {
-            height: 250px;
-            background: linear-gradient(45deg, var(--light-orange), var(--primary-orange));
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.2);
-        }
-
-        .video-container {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .video-placeholder {
-            width: 100%;
-            max-width: 600px;
-            height: 350px;
-            background: linear-gradient(135deg, var(--primary-orange), var(--light-orange));
+        .recipe-box {
+            position: relative;
+            overflow: hidden;
             border-radius: 20px;
+            box-shadow: 0 8px 15px rgba(255, 107, 53, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            background: white;
+            height: 300px; /* Fixed height for uniformity */
+        }
+
+        .recipe-box a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+
+        .recipe-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .recipe-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        .recipe-box:hover img {
+            transform: scale(1.1);
+        }
+
+        .recipe-layer {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            margin: 0 auto;
-            color: white;
-            font-size: 1.2rem;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+            transition: top 0.5s ease;
         }
 
-        .video-placeholder::before {
-            content: '▶️';
-            font-size: 4rem;
+        .recipe-box:hover .recipe-layer {
+            top: 0;
+        }
+
+        .recipe-layer h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 0.6s ease-in-out;
+        }
+
+        .recipe-layer p {
+            font-size: 1rem;
             margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-in-out;
+        }
+
+        .recipe-layer a {
+            background: var(--primary-orange);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .recipe-layer a:hover {
+            background: var(--light-orange);
         }
 
         /* Footer */
@@ -437,8 +392,7 @@
             }
         }
 
-        .recipe-card,
-        .step {
+        .recipe-box {
             animation: fadeInUp 0.6s ease-out;
         }
 
@@ -456,12 +410,12 @@
                 padding: 1rem;
             }
 
-            .recipe-content {
-                padding: 2rem;
+            .recipes-container {
+                grid-template-columns: 1fr;
             }
 
-            .ingredients-grid {
-                grid-template-columns: 1fr;
+            .recipe-box {
+                height: 250px;
             }
         }
 
@@ -473,6 +427,10 @@
             .section-title {
                 font-size: 1.5rem;
             }
+
+            .recipe-box {
+                height: 200px;
+            }
         }
     </style>
 </head>
@@ -483,8 +441,9 @@
             <a href="#" class="logo">🍲 Dinu Vegan Recipes</a>
             <button class="menu-toggle" id="menu-toggle">☰</button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="/index.html">Home</a></li>
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="/Pages/about.html">About</a></li>
+                <li><a href="#recipes">Recipes</a></li>
                 <li><a href="/Pages/services.html">Services</a></li>
                 <li><a href="/Pages/contact.html">Contact</a></li>
             </ul>
@@ -499,67 +458,88 @@
         });
     </script>
 
-    <div class="recipes">
-        <div class="cupcake-images1">
-            <img src="/image/cupcake.jpg" style="width: 700px; height: 500px;" alt="">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Dinu Vegan Recipes</h1>
+            <h2>Delicious Plant-Based Meals for Everyone</h2>
         </div>
+    </section>
 
-        <div class="recipe-content">
-            <h2 class="section-title">Ingredients</h2>
-            <div class="ingredients-grid">
-                <div class="ingredient-item">📏 1¼ cups all-purpose flour</div>
-                <div class="ingredient-item">🥄 1¼ tsp baking powder</div>
-                <div class="ingredient-item">🧂 ½ tsp salt</div>
-                <div class="ingredient-item">🧈 ½ cup unsalted butter, softened</div>
-                <div class="ingredient-item">🍯 ¾ cup sugar</div>
-                <div class="ingredient-item">🥚 2 large eggs, room temperature</div>
-                <div class="ingredient-item">🌟 2 tsp pure vanilla extract</div>
-                <div class="ingredient-item">🥛 ½ cup buttermilk, room temperature</div>
+    <!-- Recipes Section -->
+    <div class="container">
+        <h2 class="section-title">Our Recipes</h2>
+        <div class="recipes-container">
+            <!-- Recipe Box 1 -->
+            <div class="recipe-box">
+                <a href="/Pages/koththu.html">
+                    <img src="/image/koththu new 7.jpg" alt="Cheese Koththu" />
+                    <div class="recipe-layer">
+                        <h4>Vegan Koththu</h4>
+                        <p>Spicy and savory vegan koththu packed with veggies.</p>
+                        <a href="/Pages/koththu.html">View Recipe</a>
+                    </div>
+                </a>
             </div>
-
-            <h2 class="section-title">Directions</h2>
-            <div class="directions">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <p>Preheat the oven to 350°F and line a cupcake/muffin pan with cupcake liners.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <p>In a medium bowl, whisk together 1¼ cups flour, 1¼ tsp baking powder, and ½ tsp salt. Set flour mix aside.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <p>In the bowl of an electric mixer, beat butter and sugar on medium-high speed 5 minutes until thick and fluffy, scraping down the bowl as needed.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <p>Add eggs and vanilla extract, and beat on medium-high speed 1 minute.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <p>Reduce mixer speed to medium and add the flour mixture in thirds alternating with the buttermilk, mixing to incorporate with each addition. Scrape down the bowl as needed and beat until just combined and smooth, and don't overmix. Divide the batter evenly into a 12-count lined muffin or cupcake pan, filling ⅔ full.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">6</div>
-                    <p>Bake for 20-23 minutes at 350°F, or until a toothpick inserted in the center comes out clean. Let them cool in the pan for 5 minutes, then transfer to a wire rack and cool to room temperature before frosting.</p>
-                </div>
+            <!-- Recipe Box 2 -->
+            <div class="recipe-box">
+                <a href="/Pages/rice.html">
+                <img src="/image/WhatsApp Image 2024-08-16 at 15.39.53.jpeg" alt="Chicken Rice" />
+                    <div class="recipe-layer">
+                        <h4>Vegan Fried Rice</h4>
+                        <p>A quick and flavorful rice dish with vibrant Vegetables.</p>
+                        <a href="/Pages/rice.html">View Recipe</a>
+                    </div>
+                </a>
             </div>
-
-            <div class="imges 2">
-                <img src="/image/cupcake 4.jpg" style="width: 500px;" alt="">
-                <img src="/image/cup cak.jpg" style="width: 500px;" alt="">
+            <!-- Recipe Box 3 -->
+            <div class="recipe-box">
+                <a href="/Pages/Cupcake.html">
+                     <img src="/image/cup cake new 1.jpg" alt="Cup Cake" />
+                    <div class="recipe-layer">
+                        <h4>Vegan Cupcakes</h4>
+                        <p>Fluffy and sweet cupcakes for any occasion.</p>
+                        <a href="/Pages/Cupcake.html">View Recipe</a>
+                    </div>
+                </a>
             </div>
-            <div class="video">
-                <iframe width="500px" height="300px" src="https://www.youtube.com/embed/NOoVxIweTw0?si=99KFZl9fn3TsqfYt&amp;controls=0&amp;start=13" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <!-- Recipe Box 4 -->
+            <div class="recipe-box">
+                <a href="/Pages/pesta.html">
+                   <img src="/image/pesta new 2.jpg" alt="Cheese Pesta" />
+                    <div class="recipe-layer">
+                        <h4>Cheese Pesta</h4>
+                        <p>Creamy and delicious cheese pesta with fresh herbs.</p>
+                        <a href="/Pages/pesta.html">View Recipe</a>
+                    </div>
+                </a>
+            </div>
+            <!-- Recipe Box 5 -->
+            <div class="recipe-box">
+                <a href="/Pages/pizza.html">
+                     <img src="/image/pizza new 1.jpg" alt="Double Chicken Pizza" />
+                    <div class="recipe-layer">
+                        <h4>Double Chicken Pizza</h4>
+                        <p>Crisp and cheesy double chicken pizza with fresh toppings.</p>
+                        <a href="/Pages/pizza.html">View Recipe</a>
+                    </div>
+                </a>
+            </div>
+            <!-- Recipe Box 6 -->
+            <div class="recipe-box">
+                <a href="/Pages/nuddels.html">
+                   <img src="/image/nuddels new 6.jpg" alt="Noodles" />
+                    <div class="recipe-layer">
+                        <h4>Vegan Noodles</h4>
+                        <p>Slurpy and spicy noodles with a vegan twist.</p>
+                        <a href="/Pages/nuddels.html">View Recipe</a>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -571,13 +551,11 @@
                     <a href="https://www.linkedin.com/" class="social-icon">💼</a>
                 </div>
             </div>
-            
             <div class="footer-section">
                 <h3>Contact Info</h3>
                 <p>📞 077-6419446</p>
                 <p>📧 dinithipalliyaguru@gmail.com</p>
             </div>
-            
             <div class="footer-section">
                 <h3>Recipe Menu</h3>
                 <ul class="menu-list">
@@ -590,9 +568,8 @@
                 </ul>
             </div>
         </div>
-        
         <div class="copyright">
-            <p>&copy; 2024 Dinu Vegan Recipes. All rights reserved.</p>
+            <p>&copy; 2025 Dinu Vegan Recipes. All rights reserved.</p>
         </div>
     </footer>
 </body>

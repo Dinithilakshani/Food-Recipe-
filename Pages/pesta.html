@@ -1,377 +1,590 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesta</title>
-
+    <title>Vegan Pasta Recipe - Dinu Vegan Recipes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        
-     *   {
-    padding: 10px;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
-    background-color: rgb(26, 25, 25);
-
-}
-
-
-
-.header{
-    height: 10vh;
-    width: 100%;
-    position: fixed;
-    top:0; left: 0; right: 0;
-    z-index: 1000;
-    display: flex;
-}
-.html{
-    font-size: 62.5%;
-    overflow-x: hidden;
-}
-
-
-.heading{
-    text-align: center;
-   margin-top: 30px;
-    padding:2rem 0;
-    padding-bottom: 3rem;
-    font-size: 2.5rem;
-    color:white
-}
-
-.heading span{
-    background: var(--main-color);
-    color:#000000;
-    display: inline-block;
-    padding:.5rem 3rem;
-    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
-}
-.home{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 1000px;
-    background: url(/image/ma.jpg) no-repeat;
-    background-position: center;
-    background-size: cover;
-    padding-top: 17rem;
-    padding-bottom: 10rem;
-}
-.home .home-content{
-    text-align: center;
-    width: 60rem;
-}
-
-.home .home-content h1{
-    color:var(--text-color);
-    font-size: 3rem;
-
-}
-        body{
-            background-color: black;
-
-        }
-        .pesta{
-          color: azure;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .f-imge {
+        :root {
+            --primary-orange: #ff6b35;
+            --light-orange: #ff8c61;
+            --dark-orange: #e55530;
+            --cream-white: #fefefe;
+            --soft-white: #f8f8f8;
+            --text-dark: #2c2c2c;
+            --text-light: #666666;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--soft-white) 0%, #fff5f2 100%);
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--light-orange) 100%);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
-            gap: 20px;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            
         }
 
-        .f-imge a img {
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-menu li a.active {
+            background: rgba(255, 255, 255, 0.3);
+            font-weight: 600;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+
+        .menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(135deg, var(--primary-orange) 0%, var(--light-orange) 100%);
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-menu li a {
+                width: 100%;
+                padding: 1rem;
+                border-radius: 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--light-orange) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="pasta" patternUnits="userSpaceOnUse" width="50" height="50"><path d="M10 10 Q20 20 30 10 T50 10" stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23pasta)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero h2 {
+            color: var(--cream-white);
+            font-size: 2rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .recipe-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.1);
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .recipe-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, var(--light-orange), var(--primary-orange));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .recipe-image::after {
+            content: '🍝';
+            font-size: 6rem;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .recipe-content {
+            padding: 3rem;
+        }
+
+        .section-title {
+            color: var(--primary-orange);
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: personally;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-orange), var(--light-orange));
+            border-radius: 2px;
+        }
+
+        /* Ingredients Grid */
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .ingredient-item {
+            background: var(--soft-white);
+            padding: 1rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-orange);
+            transition: transform 0.3s ease;
+        }
+
+        .ingredient-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.1);
+        }
+
+        /* Directions */
+        .directions {
+            margin: 3rem 0;
+        }
+
+        .step {
+            background: white;
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--soft-white);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            border-color: var(--light-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.1);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--light-orange));
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Media Gallery */
+        .media-gallery {
+            margin: 3rem 0;
+        }
+
+        .images-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .image-placeholder {
+            height: 250px;
+            background: linear-gradient(45deg, var(--light-orange), var(--primary-orange));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.2);
+        }
+
+        .video-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--light-orange));
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .video-placeholder::before {
+            content: '▶️';
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #1a1a1a 100%);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-orange);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .social-icon {
             width: 50px;
             height: 50px;
-            transition: transform 0.5s, box-shadow 0.5s;
-        }
-
-        .f-imge a img:hover {
-            transform: scale(1.2) rotate(10deg);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-        hr{
-            color: white;
-        }
-    
-        footer{
-        width: 100%;
-        height: auto;
-  
-        color: white;
-        
-        justify-content: space-between;
-        padding: 12px;
-        font-size: 1.2rem;
-        top: 0;
-        left: 0;
-      }
-
-      nav > ul {
-        list-style: none;
-        display: flex;
-        text-align: center;
-        margin-left: 550px;
-      }
-
-      nav > ul > li {
-        margin: 0 40px;
-      }
-
-      nav > ul > li > a {
-        color: white;
-        text-decoration: none;
-      }
-      
-
-      .detaile{
-        margin-left: 600px;
-        margin-top: -10px;
-      }
-      #copywrite{
-        text-align: center;
-        margin-top: 100px;
-
-      }
-      /* #imge{
-        margin-left: 1100px;
-       margin: -100px;
-        width: 300px;
-        height: 700px;
-        border-radius: 20px;
-      } */
-      .linked {
+            background: linear-gradient(135deg, var(--primary-orange), var(--light-orange));
+            border-radius: 50%;
             display: flex;
-            
-            margin-top: -300px;
-        }
-
-        .linked ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .linked li {
-            margin-bottom: 15px;
-        }
-
-        .linked a {
+            align-items: center;
+            justify-content: center;
+            color: white;
             text-decoration: none;
-            font-size: 20px;
-            color: #333;
-            transition: color 0.3s, transform 0.4s;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
         }
 
-        .linked a:hover {
-            color: green;
-            transform: scale(1.1) translateX(10px);
+        .social-icon:hover {
+            transform: scale(1.1) rotate(5deg);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .menu-list {
+            list-style: none;
         }
 
-        .linked {
-            animation: fadeIn 1s ease-in-out;
+        .menu-list li {
+            margin: 0.5rem 0;
         }
 
-        @media (max-width: 1200px) {
-            .html{
-                font-size: 55%;
+        .menu-list a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .menu-list a:hover {
+            color: var(--light-orange);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
-            
-        }
-        @media (max-width: 991px) {
-            
-           .recipes img{
-                width: 90vw;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
+
+        .recipe-card,
+        .step {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .html{
-                font-size: 50%;
+            .hero h1 {
+                font-size: 2.5rem;
             }
 
-            .recipes  img{
-                width: 70vw;
-            }
-        }
-        @media (max-width: 450px) {
-            .html{
-                font-size: 40%;
+            .hero h2 {
+                font-size: 1.5rem;
             }
 
-            .recipes  img{
-                width: 60vw;
-            }
-        }
-        @media (max-width: 300px) {
-            .html{
-                font-size: 30%;
+            .container {
+                padding: 1rem;
             }
 
-            .recipes img{
-                width: 50vw;
+            .recipe-content {
+                padding: 2rem;
+            }
+
+            .ingredients-grid {
+                grid-template-columns: 1fr;
             }
         }
-      
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Header / Navbar -->
     <header class="header">
-        <nav>
-            <ul>
-                <a href="/index.html">Home</a>
+        <nav class="navbar">
+            <a href="#" class="logo">🍲 Dinu Vegan Recipes</a>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/Pages/about.html">About</a></li>
+                <li><a href="/Pages/services.html">Services</a></li>
+                <li><a href="/Pages/contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section class="home" id="home">
-        <div class="home-content">
-            <h1 style="color: #e7dede;">Dinu Vegan Recipies</h1>
-            <h2></h2>
-        </div>
-    </section>
-    
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const navMenu = document.getElementById("nav-menu");
 
-<section class="pesta">
-    <h1>Cheese Pesta</h1>
-   <div class="recipes">
-  
-   <img src="/image/ew.jpg" style="width: 1200px; height: 700px;" alt="">
-<div>
-    <div class="Ingredients">
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <div  class="recipes">
+  <img src="/image/ew.jpg" style="width: 700px; height: 500px;" alt="">
+</div>
+
+
+    <!-- Main Content -->
+    <div class="container">
         
+                <h2 class="section-title">Ingredients</h2>
+                <div class="ingredients-grid">
+                    <div class="ingredient-item">🍝 4 cups dried vegan macaroni</div>
+                    <div class="ingredient-item">🌱 1/4 cup vegan butter</div>
+                    <div class="ingredient-item">📏 1/4 cup all-purpose flour</div>
+                    <div class="ingredient-item">🥛 2 1/2 cups plant-based milk (e.g., soy or almond)</div>
+                    <div class="ingredient-item">🥄 2 heaping tsp dry mustard</div>
+                    <div class="ingredient-item">🧀 1 lb vegan cheese (e.g., cheddar-style), grated</div>
+                    <div class="ingredient-item">🧂 1/2 tsp kosher salt, more to taste</div>
+                    <div class="ingredient-item">🌶️ 1/2 tsp seasoned salt, more to taste</div>
+                    <div class="ingredient-item">🌑 1/2 tsp ground black pepper</div>
+                    <div class="ingredient-item">🌶️ Cayenne pepper, paprika, or thyme (optional)</div>
+                </div>
 
-        <h2>Ingredients</h2>
-    </div>
-
-   <ul>
-    <li>4 c. dried macaroni</li>
-    <li>1 egg</li>
-    <li>1/4 c. salted butter</li>
-    <li>1/4 c. all-purpose flour<li>
-       <li>2 1/2 c. whole milk</li> 
-        <li>2 heaping tsp. dry mustard, plus more to taste</li>
-        <li>1 lb. cheese (such as cheddar, jack, and/or fontina), grated</li>
-        <li>1/2 tsp. kosher salt, more to taste<li>
-            <li>1/2 tsp. seasoned salt, plus more to taste</li>
-            <li>1/2 tsp. ground black pepper</li>
-            <li>Cayenne pepper, paprika, and/or thyme (optional)</li>
-        </ul>
-    </div>
-        <br>
-        <div class="direction">
-        <h2>Directions</h2>
-
-    </div>
-        <br>
-
-        <ol>
-         <div class="step 1">
-                <li>
-                 Cook the macaroni until very firm. The macaroni should be too firm to eat right out of the pot. Drainli.
-                </li>
-                <br>
-        </div>
-            
-        <div class="step 2">
-                    <li>
-                    Beat the egg in a small bowl.
-                    </li><br>
-        </div>
-            
-       <div class="step 3">
-                    <li>
-                    Melt the butter in a large pot and sprinkle in the flour. Whisk together over medium-low heat. Cook the mixture for 5 minutes, whisking constantly. Don't let it burn. Pour in the milk, add the mustard, and whisk until smooth. Cook for 5 minutes until very thick. Reduce the heat to low.
-                    
-                    </li><br>
-      </div>
-                  
-     <div class="step 4">
-                    <li>
-                    Take 1/4 cup of the sauce and slowly pour it into the beaten egg, whisking constantly to avoid cooking the egg. Whisk together till smooth.
-                    </li><br>
-     </div>
-                
-     <div class="step 5">
-                    <li>
-                     Pour the egg mixture into the sauce, whisking constantly. Stir until smooth. Add in the cheese and stir to melt. Add the salt, seasoned salt, pepper, and other optional seasonings. Taste the sauce, adding more salt and seasoned salt as needed. (Do not under-salt!) Pour in the drained, cooked macaroni and stir to combine. Pour into a buttered baking dish, top with extra cheese, and bake at 350°F for 20 to 25 minutes, then serve.
-                    </li><br>
-     </div>
-                
-        </ol>
-
-        <br>
-        <div class="imges">
-        <video src="/video/Download.mp4" style="width: 700px;
-        height: 400px;" controls></video>
-<iframe width="700px" height="400px" src="https://www.youtube.com/embed/YxVZuuxxXxk?si=vPPE9JLQhCPVCnzQ&amp;start=9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <div>
-
-      
-            <footer>
-                <div class="f-imge"> 
-                        <a href="https://web.whatsapp.com/"><img src="/image/wt.jpg" width="50px" height="50px">
-                        </a>
-                        <a href="https://web.facebook.com/home.php"><img src="/image/fd.jpg"width="50px" height="50px alt=">
-                        </a>
-                        <a href="https://www.instagram.com/"><img src="/image/=.png" width="50px" height="50pxalt="></a>
-                        <a href="https://www.linkedin.com/in/dinithi-palliyaguru-8b4505266/ "><img src="/image/inn.png" width="50px" height="50px" alt=""></a>
-                </div><br><br><br>
-                
-                    <nav>
-                        <ul>
-                            <li><a href="/index.html"> Home</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Contact</a></li><br><br><br>
-                
-                        </ul>
-                
-                    </nav><br><br>
-                   
-                    
-                   
-                
-                    
-                
-                
-                    <div class="detaile">
-                        <p>Contact Number: 077-6419446</p><br>
-                        <p>Email: dinithipalliyaguru@gmail.com</p>
-                       
-                
-                        
+                <h2 class="section-title">Directions</h2>
+                <div class="directions">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <p>Cook the macaroni until very firm, slightly undercooked. Drain and set aside.</p>
                     </div>
-                
-                    <!-- <img id="imge" src="/image/che.jpg" alt=""> -->
-                
-                    <div class="linked">
-                        <ul>
-                            <h1>Menu List</h1><br>
-                            <li><a href="/Pages/Cupcake.html">Capcake recipes</a></li><br>
-                            <li><a href="/Pages/koththu.html"> Koththu recipes</a></li><br>
-                            <li><a href="/Pages/nuddels.html">Nuddels recipes</a></li><br>
-                            <li><a href="/Pages/pesta.html">Pesta recipes</a></li><br>
-                            <li><a href="/Pages/pizza.html">Double Chicken Pizza recipes</a></li><br>
-                            <li><a href="/Pages/rice.html">Sea-Food rice recipes</a></li>
-                        </ul>
-                
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <p>Melt vegan butter in a large pot over medium-low heat. Sprinkle in flour and whisk to combine. Cook for 5 minutes, whisking constantly.</p>
                     </div>
-                
-                    <p id="copywrite">copywrite &copy;2024</p>
-                
-                </footer>
-                <section>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <p>Pour in plant-based milk, add mustard, and whisk until smooth. Cook for 5 minutes until very thick, then reduce heat to low.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <p>Add vegan cheese to the sauce, stirring until melted. Add salt, seasoned salt, pepper, and optional seasonings. Taste and adjust seasoning as needed.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <p>Stir in the cooked macaroni to coat with the sauce. Pour into a greased baking dish, top with extra vegan cheese, and bake at 350°F for 20-25 minutes. Serve hot.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Media Gallery -->
+        <div class="images">
+            <iframe width="500px" height="300px" style="padding:20px;" src="https://www.youtube.com/embed/YxVZuuxxXxk?si=vPPE9JLQhCPVCnzQ&amp;start=9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://web.whatsapp.com/" class="social-icon">📱</a>
+                    <a href="https://web.facebook.com/" class="social-icon">📘</a>
+                    <a href="https://www.instagram.com/" class="social-icon">📷</a>
+                    <a href="https://www.linkedin.com/" class="social-icon">💼</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 077-6419446</p>
+                <p>📧 dinithipalliyaguru@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Recipe Menu</h3>
+                <ul class="menu-list">
+                    <li><a href="/Pages/Cupcake.html">🧁 Cupcake Recipes</a></li>
+                    <li><a href="/Pages/koththu.html">🍜 Koththu Recipes</a></li>
+                    <li><a href="/Pages/nuddels.html">🍝 Noodles Recipes</a></li>
+                    <li><a href="/Pages/pesta.html">🍝 Pasta Recipes</a></li>
+                    <li><a href="/Pages/pizza.html">🍕 Pizza Recipes</a></li>
+                    <li><a href="/Pages/rice.html">🍚 Rice Recipes</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Dinu Vegan Recipes. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
